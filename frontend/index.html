@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily AI Planner</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans min-h-screen p-8">
+    <div class="max-w-3xl mx-auto bg-white p-8 rounded-xl shadow-lg">
+        <h1 class="text-3xl font-bold text-blue-600 mb-2">📅 Daily AI Planner</h1>
+        <p class="text-gray-500 mb-6">Günlük planlarını yaz, yapay zeka senin için saatlik çizelgeye dönüştürsün.</p>
+
+        <!-- Kullanıcı Girdi Alanı -->
+        <div class="mb-6">
+            <textarea id="userInput" rows="4" class="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none resize-none" placeholder="Örn: Yarın sabah 9'da toplantım var. Öğleden sonra kod yazmam lazım..."></textarea>
+            <button id="generateBtn" class="mt-4 w-full bg-blue-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-blue-700 transition">
+                Planımı Oluştur
+            </button>
+        </div>
+
+        <!-- Yükleniyor Göstergesi -->
+        <div id="loading" class="hidden text-center text-blue-600 font-medium py-4">
+            Yapay zeka planını hazırlıyor, lütfen bekle...
+        </div>
+
+        <!-- Sonuç Alanı -->
+        <div id="resultContainer" class="hidden">
+            <div class="bg-blue-50 p-4 rounded-lg mb-6 border border-blue-100">
+                <h2 class="font-bold text-blue-800 text-lg" id="summaryText"></h2>
+                <p class="text-sm text-blue-600 mt-1">Toplam Süre: <span id="totalHours"></span> saat</p>
+            </div>
+            
+            <!-- Zaman Çizelgesi (Timeline) -->
+            <div id="timeline" class="space-y-4"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
